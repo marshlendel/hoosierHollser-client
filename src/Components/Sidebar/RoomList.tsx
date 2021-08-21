@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import RoomName from "./RoomName";
+import {Link} from "react-router-dom"
+
+
+
 
 class RoomList extends Component {
   render() {
@@ -7,21 +11,15 @@ class RoomList extends Component {
       <nav style={{...styles.children, ...styles.nav}}>
         <h2 style={styles.h2}>Rooms</h2>
         <ul style={styles.ul}>
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
-          <RoomName />
+        <Link to="/General">
+          <RoomName name="General"/>
+          </Link>
+        <Link to="/Random">
+          <RoomName name="Random"/>
+          </Link>
+        <Link to="/Fishers">
+          <RoomName name ="Fishers"/>
+          </Link>
         </ul>
       </nav>
     );
@@ -45,7 +43,7 @@ const styles: any = {
   },
 
   nav: {
-    overflowY: "scroll"
+    overflowY: "auto"
   }
 };
 

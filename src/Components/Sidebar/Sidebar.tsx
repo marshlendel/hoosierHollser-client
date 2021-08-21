@@ -1,14 +1,34 @@
 import React, { Component } from "react";
 import UserInfo from "./UserInfo";
 import RoomList from "./RoomList";
-class Sidebar extends Component {
+import Room from "../Room/Room";
+import { Route, Switch } from "react-router";
+
+type props = {
+  logOut: any
+}
+
+class Sidebar extends Component <props, {}>{
   render() {
     return (
+      <>
       <aside style={styles.sidebar}>
-        <UserInfo />
+        <UserInfo logOut={this.props.logOut}/>
         <h1 style={{...styles.children, ...styles.h1}}>Hoosier Holler</h1>
         <RoomList />
       </aside>
+       <Switch>
+       <Route exact path="/General">
+         <Room name="General" description="Talk about anything and everything"/>
+       </Route>
+       <Route exact path="/Random">
+       <Room name="Random" description="Whatever topics lol. So random"/>
+       </Route>
+       <Route exact path="/Fishers">
+       <Room name="Fishers" description="A nice, unoffensive Indy suburb"/>
+       </Route>
+     </Switch>
+     </>
     );
   }
 }

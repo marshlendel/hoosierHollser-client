@@ -3,11 +3,17 @@ import RoomHeader from "./RoomHeader";
 import MessageList from "../Message/MessageList";
 import MessageForm from "../Message/MessageForm";
 
-class Room extends Component {
+type props = {
+  name: string,
+  description: string
+}
+
+class Room extends Component <props, {}> {
+
   render() {
     return (
         <div style={styles}>
-        <RoomHeader />
+        <RoomHeader name={this.props.name} description={this.props.description}/>
         <MessageList />
         <MessageForm />
 

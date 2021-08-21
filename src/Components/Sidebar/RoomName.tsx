@@ -1,9 +1,13 @@
 import React from "react";
 
-const RoomName = () => {
+type Props = {
+  name: string;
+}
+
+const RoomName = (props: Props) => {
   return (
     <li style={styles.li}>
-      <span style={styles.span}>#general</span>
+      <span style={styles.span}>#{props.name}</span>
     </li>
   );
 };

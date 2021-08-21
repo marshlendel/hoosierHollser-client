@@ -1,12 +1,16 @@
 import React, { Component } from "react";
+type props = {
+  name: string,
+  description: string
+}
 
-class RoomHeader extends Component {
+class RoomHeader extends Component <props, {}> {
   render() {
     return (
       <div style={styles.roomHeader}>
         <div>
-          <h2 style={styles.h2}>#general</h2>
-          <p style={styles.p}>Announcements and general chat</p>
+          <h2 style={styles.h2}>#{this.props.name}</h2>
+          <p style={styles.p}>{this.props.description}</p>
         </div>
       </div>
     );

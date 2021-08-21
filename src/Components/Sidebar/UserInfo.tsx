@@ -1,7 +1,11 @@
 import React, {Component} from "react";
 import faker from "faker"
 
-class UserInfo extends Component {
+type props = {
+  logOut: any
+}
+
+class UserInfo extends Component <props, {}> {
   render() {
     return (
       <div style={{...styles.children, ...styles.UserInfo}}>
@@ -9,7 +13,7 @@ class UserInfo extends Component {
         <img style={styles.pic} src={faker.image.avatar()} alt="bio" />
         </div>
         <div style={styles.userName}>Kevin</div>
-          <i className="fas fa-lg fa-sign-out-alt"></i>
+          <span onClick={this.props.logOut}><i className="fas fa-lg fa-sign-out-alt"></i></span>
       </div>
     );
   }

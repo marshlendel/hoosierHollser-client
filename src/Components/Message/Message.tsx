@@ -1,39 +1,49 @@
 import React, {Component} from 'react'
 import faker from "faker"
 
-class Message extends Component {
+type props = {
+  content: string,
+  name: string,
+  date: string,
+  likes: string
+}
+
+class Message extends Component <props, {}> {
     render() {
-        return(
-            <div style={{paddingLeft: "1rem", display:"flex"}}className= "ui  comments">
-            <div className="comment">
-            <div className="avatar">
-              <img alt="avatar" src={faker.image.avatar()} />
-            </div>
-            <div className="content">
-              <a href="/" className="author">
-                Marshall Brown
-              </a>
-              <div className="metadata">
-                <span className="date">10 days ago</span>
-              </div>
-              <div className="text">
-              loremecweckwnecjndjkcndcnwdc
-              cecnwdecnsdklcnlskdnclksndcs\dcdc
-              sdcsdcsndjkncsdjkncsjdncnsdckjnsdcsdcs dcnms dcnms dcsdc
-              dcsdn cdsd
-              </div>
-              <div style={styles} className="metadata">
-                <i className="thumbs up icon"></i>
-                <p>5 Likes</p>
-              </div>
-            </div>
+      return(
+        <div style={{paddingLeft: "1rem", display:"flex"}}className= "ui  comments">
+        <div className="comment">
+        <div className="avatar">
+          <img alt="avatar" src={faker.image.avatar()} />
+        </div>
+        <div className="content">
+          <a href="/" className="author">
+            {this.props.name}
+          </a>
+          <div className="metadata">
+            <span className="date" style={styles.time}>{this.props.date}</span>
           </div>
+          <div className="text">
+         {this.props.content}
           </div>
-        )
-    }
+          <div style={styles.thumbs} className="metadata">
+            <i className="thumbs up icon"></i>
+            <p>{this.props.likes} Likes</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    )
+}
 }
 
 const styles = {
-  color: "#FD297B"
+thumbs: {
+color: "#666666"
+},
+
+time: {
+color: " rgb(0 0 0 / 62%)"
+}
 }
 export default Message

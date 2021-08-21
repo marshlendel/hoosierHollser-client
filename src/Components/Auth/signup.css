@@ -1,0 +1,12 @@
+button:hover {
+    background-color: white !important;
+    color: #FF5864 !important;
+}
+
+input:focus {
+    outline: 0 !important;
+}
+
+.ui.checkbox label, .ui.checkbox+label {
+    color: #ffffffcc !important;
+}
