@@ -1,8 +1,9 @@
 import React, {Component} from "react";
-import faker from "faker"
 
 type props = {
-  logOut: any
+  logOut: any,
+  firstName: string|null
+  
 }
 
 class UserInfo extends Component <props, {}> {
@@ -10,9 +11,9 @@ class UserInfo extends Component <props, {}> {
     return (
       <div style={{...styles.children, ...styles.UserInfo}}>
         <div style={styles.Avatar}>
-        <img style={styles.pic} src={faker.image.avatar()} alt="bio" />
+        <img style={styles.pic} src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="bio" />
         </div>
-        <div style={styles.userName}>Kevin</div>
+        <div style={styles.userName}>{this.props.firstName}</div>
           <span onClick={this.props.logOut}><i className="fas fa-lg fa-sign-out-alt"></i></span>
       </div>
     );

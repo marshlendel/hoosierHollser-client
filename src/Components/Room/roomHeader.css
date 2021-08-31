@@ -1,0 +1,11 @@
+.header-parent:hover .headerIcons{
+    display: block !important;
+}
+
+.headerIcons:hover {
+    color: rgba(253, 41, 123)
+}
+
+a {
+    color: black !important
+}

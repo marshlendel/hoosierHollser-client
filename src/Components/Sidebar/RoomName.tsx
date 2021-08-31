@@ -1,13 +1,18 @@
 import React from "react";
 
-type Props = {
-  name: string;
+type props = {
+  setRoomInfo: any,
+  roomName: string,
+  name: string
+  roomDescription: string,
+  ownerId: string,
+  id: string
 }
 
-const RoomName = (props: Props) => {
+const RoomName = (props: props) => {
   return (
     <li style={styles.li}>
-      <span style={styles.span}>#{props.name}</span>
+      <span  onClick={() => props.setRoomInfo(props.roomName, props.roomDescription, props.ownerId, props.id)} style={styles.span}>#{props.name}</span>
     </li>
   );
 };

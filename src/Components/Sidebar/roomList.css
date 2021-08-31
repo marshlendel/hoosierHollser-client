@@ -1,0 +1,11 @@
+.ui.form input {
+    width: 80% !important;
+}
+
+.ui.modal>.content {
+    width: auto !important;
+}
+
+li span:hover {
+    background-color: #c23254 !important;
+}
